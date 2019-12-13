@@ -1,0 +1,62 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content color="secondary" class="ion-padding">
+  <h1>Add a patient</h1>
+  <form (ngSubmit)="add()">
+    <ion-item>
+      <ion-label>Nom :</ion-label>
+      <ion-input type="text" [(ngModel)]="patient.nom" name="nom"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Prénom :</ion-label>
+      <ion-input type="text" [(ngModel)]="patient.prenom" name="prenom"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Age :</ion-label>
+      <ion-input type="text" [(ngModel)]="patient.Age" name="age"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>antécédents :</ion-label>
+      <ion-input type="text" [(ngModel)]="patient.antecedent" name="ant"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Mode Charge :</ion-label>
+      <ion-input type="text" [(ngModel)]="patient.modeCharge" name="modeCharge"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>poids :</ion-label>
+      <ion-input type="text" [(ngModel)]="patient.poids" name="poids"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Tention :</ion-label>
+      <ion-input type="text" [(ngModel)]="patient.tension" name="title"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>type de douleur :</ion-label>
+      <ion-select [(ngModel)]="patient.TypeDouleur" name="TypeDouleur">
+        <ion-select-option value="Continu">
+          Continu
+        </ion-select-option>
+        <ion-select-option value="periodique">
+          Périodique
+        </ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>Période :</ion-label>
+      <ion-input type="text" [(ngModel)]="patient.periode" name="priode" [disabled]="patient.TypeDouleur== 'periodique' ? false: true "></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Localisation :</ion-label>
+      <ion-input type="text" [(ngModel)]="patient.localisation" name="local"></ion-input>
+    </ion-item>
+
+    <ion-button  type="submit" block>Add Patient</ion-button>
+  </form>
+</ion-content>
+

@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>All patients</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+    <ion-list>
+      <ion-card  *ngFor="let patient of patients">
+        <ion-card-header color="primary">
+          <ion-card-title>{{patient.nom}}</ion-card-title>
+
+        </ion-card-header>
+        <ion-card-content>
+          <ion-item>
+              <ul>
+                <li><strong>Age :</strong> {{ patient.Age}}</li>
+                <li><strong>Mode prise en charge :</strong> {{patient.modeCharge}}</li>
+                <li><strong>Antécédents :</strong> {{patient.antecedent}}</li>
+                <li><strong>Tension :</strong> {{patient.tension}}</li>
+                <li><strong>Poids :</strong> {{patient.poids}}</li>
+                <li><strong>Type douleur :</strong>
+                  {{patient.TypeDouleur}}
+                </li>
+                <li><strong>Période :</strong> {{patient.periode}}</li>
+                <li><strong>Localisation :</strong> {{patient.localisation}}</li>
+
+              </ul>
+
+
+
+          </ion-item>
+
+        </ion-card-content>
+      </ion-card>
+
+    </ion-list>
+  <ion-fab [routerLink]="['/add-patient']" vertical="bottom" horizontal="end" slot="fixed" >
+    <ion-fab-button color="success" >
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>
